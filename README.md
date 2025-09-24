@@ -57,12 +57,16 @@ A modern, production-ready movie recommendation application built with Next.js, 
    
    Fill in your environment variables in `.env.local`:
    ```env
-   NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key
-   NEXT_PUBLIC_TMDB_READ_ACCESS_TOKEN=your_tmdb_read_access_token
+   # TMDB API Configuration
+   NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key_here
    NEXT_PUBLIC_TMDB_BASE_URL=https://api.themoviedb.org/3
    NEXT_PUBLIC_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
+
+   # NextAuth Configuration
    NEXTAUTH_URL=http://localhost:3000
-   NEXTAUTH_SECRET=your_nextauth_secret
+   NEXTAUTH_SECRET=your_nextauth_secret_here
+
+   # OAuth Providers (Optional)
    GOOGLE_CLIENT_ID=your_google_client_id
    GOOGLE_CLIENT_SECRET=your_google_client_secret
    GITHUB_ID=your_github_client_id
@@ -89,12 +93,16 @@ A modern, production-ready movie recommendation application built with Next.js, 
 
 3. **Environment Variables for Production**
    ```env
+   # TMDB API Configuration
    NEXT_PUBLIC_TMDB_API_KEY=your_production_tmdb_api_key
-   NEXT_PUBLIC_TMDB_READ_ACCESS_TOKEN=your_production_tmdb_read_access_token
    NEXT_PUBLIC_TMDB_BASE_URL=https://api.themoviedb.org/3
    NEXT_PUBLIC_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
+
+   # NextAuth Configuration
    NEXTAUTH_URL=https://your-domain.vercel.app
    NEXTAUTH_SECRET=your_production_nextauth_secret
+
+   # OAuth Providers (Optional)
    GOOGLE_CLIENT_ID=your_production_google_client_id
    GOOGLE_CLIENT_SECRET=your_production_google_client_secret
    GITHUB_ID=your_production_github_client_id
