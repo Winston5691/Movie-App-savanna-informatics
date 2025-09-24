@@ -224,3 +224,4 @@ If you have any questions or need help, please:
 ---
 
 **Made with ❤️ by the MovieHub Team**# Movie-App-savanna-informatics
+# Movie-App-savanna-informatics
