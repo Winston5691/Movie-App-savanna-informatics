@@ -8,18 +8,22 @@ A modern, production-ready movie recommendation application built with Next.js, 
 - **Movie Discovery**: Browse popular, top-rated, now-playing, and upcoming movies
 - **Advanced Search**: Search movies by title, genre, year, and sort by various criteria
 - **Movie Details**: Comprehensive movie information including cast, crew, ratings, and trailers
+- **Trailer Playback**: Watch movie trailers directly in the app with YouTube integration
 - **Recommendations**: Get personalized movie recommendations based on your preferences
 - **Authentication**: Secure user authentication with Google and GitHub
 - **Responsive Design**: Beautiful, mobile-first UI that works on all devices
+- **Pagination**: Efficient pagination for optimal performance
 
 ### Technical Features
 - **TypeScript**: Full type safety and better developer experience
 - **State Management**: Efficient state management with Zustand
 - **API Integration**: TMDB API integration with intelligent caching
-- **Performance**: Optimized images, lazy loading, and code splitting
+- **Performance**: Optimized images, lazy loading, code splitting, and service worker
 - **Testing**: Comprehensive unit tests with Jest and React Testing Library
 - **CI/CD**: Automated testing, linting, and deployment pipeline
 - **Accessibility**: WCAG compliant with proper ARIA labels and keyboard navigation
+- **Performance Monitoring**: Real-time performance metrics in development
+- **Error Handling**: Comprehensive error boundaries and fallback UI
 
 ## 🛠️ Tech Stack
 
@@ -37,8 +41,8 @@ A modern, production-ready movie recommendation application built with Next.js, 
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/movie-recommendation-app.git
-   cd movie-recommendation-app
+   git clone https://github.com/Winston5691/Movie-App-savanna-informatics.git
+   cd Movie-App-savanna-informatics
    ```
 
 2. **Install dependencies**
@@ -48,70 +52,58 @@ A modern, production-ready movie recommendation application built with Next.js, 
 
 3. **Set up environment variables**
    ```bash
-   cp .env.local.example .env.local
+   cp .env.example .env.local
    ```
    
-   Fill in the required environment variables:
+   Fill in your environment variables in `.env.local`:
    ```env
-   # TMDB API Configuration
-   NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key_here
+   NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key
+   NEXT_PUBLIC_TMDB_READ_ACCESS_TOKEN=your_tmdb_read_access_token
    NEXT_PUBLIC_TMDB_BASE_URL=https://api.themoviedb.org/3
    NEXT_PUBLIC_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
-
-   # NextAuth Configuration
    NEXTAUTH_URL=http://localhost:3000
-   NEXTAUTH_SECRET=your_nextauth_secret_here
-
-   # OAuth Providers (Optional)
+   NEXTAUTH_SECRET=your_nextauth_secret
    GOOGLE_CLIENT_ID=your_google_client_id
    GOOGLE_CLIENT_SECRET=your_google_client_secret
    GITHUB_ID=your_github_client_id
    GITHUB_SECRET=your_github_client_secret
    ```
 
-4. **Get TMDB API Key**
-   - Visit [TMDB API](https://www.themoviedb.org/settings/api)
-   - Create an account and request an API key
-   - Add the API key to your `.env.local` file
-
-5. **Run the development server**
+4. **Run the development server**
    ```bash
    npm run dev
    ```
 
-6. **Open your browser**
+5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
-
-## 🧪 Testing
-
-Run the test suite:
-
-```bash
-# Run all tests
-npm test
-
-# Run tests in watch mode
-npm run test:watch
-
-# Run tests with coverage
-npm run test:coverage
-```
 
 ## 🚀 Deployment
 
 ### Vercel (Recommended)
 
-1. **Push to GitHub**
-   ```bash
-   git add .
-   git commit -m "Initial commit"
-   git push origin main
+1. **Fork this repository**
+2. **Connect to Vercel**
+   - Go to [vercel.com](https://vercel.com)
+   - Import your forked repository
+   - Set up environment variables in Vercel dashboard
+
+3. **Environment Variables for Production**
+   ```env
+   NEXT_PUBLIC_TMDB_API_KEY=your_production_tmdb_api_key
+   NEXT_PUBLIC_TMDB_READ_ACCESS_TOKEN=your_production_tmdb_read_access_token
+   NEXT_PUBLIC_TMDB_BASE_URL=https://api.themoviedb.org/3
+   NEXT_PUBLIC_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
+   NEXTAUTH_URL=https://your-domain.vercel.app
+   NEXTAUTH_SECRET=your_production_nextauth_secret
+   GOOGLE_CLIENT_ID=your_production_google_client_id
+   GOOGLE_CLIENT_SECRET=your_production_google_client_secret
+   GITHUB_ID=your_production_github_client_id
+   GITHUB_SECRET=your_production_github_client_secret
    ```
 
-2. **Deploy to Vercel**
-   - Connect your GitHub repository to Vercel
-   - Add environment variables in Vercel dashboard
-   - Deploy automatically on every push to main branch
+4. **Deploy**
+   - Push to main branch
+   - Vercel will automatically deploy
 
 ### Manual Deployment
 
@@ -120,108 +112,68 @@ npm run test:coverage
    npm run build
    ```
 
-2. **Start the production server**
+2. **Start production server**
    ```bash
    npm start
    ```
 
-## 📁 Project Structure
+## 🧪 Testing
 
-```
-src/
-├── app/                    # Next.js App Router pages
-│   ├── api/               # API routes
-│   ├── auth/              # Authentication pages
-│   ├── movies/            # Movie-related pages
-│   └── search/            # Search page
-├── components/            # React components
-│   ├── layout/           # Layout components
-│   ├── movies/           # Movie-related components
-│   ├── search/           # Search components
-│   └── ui/               # Reusable UI components
-├── hooks/                # Custom React hooks
-├── lib/                  # Utility functions
-├── services/             # API services
-├── store/                # State management
-├── types/                # TypeScript type definitions
-└── __tests__/            # Test files
+Run the test suite:
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+
+# Run tests in watch mode
+npm run test:watch
 ```
 
-## 🔧 Available Scripts
+## 📊 Performance
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Fix ESLint errors
-- `npm test` - Run tests
-- `npm run test:watch` - Run tests in watch mode
-- `npm run test:coverage` - Run tests with coverage
-- `npm run type-check` - Run TypeScript type checking
+The application includes several performance optimizations:
 
-## 🎨 Design System
-
-The application uses a consistent design system with:
-
-- **Colors**: Blue and purple gradient theme
-- **Typography**: Inter font family
-- **Spacing**: Consistent spacing scale
-- **Components**: Reusable, accessible components
-- **Icons**: Heroicons for consistent iconography
-
-## 🔒 Security Features
-
-- **Authentication**: Secure OAuth integration
-- **CSRF Protection**: Built-in CSRF protection
-- **XSS Protection**: Content Security Policy headers
-- **Input Validation**: Type-safe input handling
-- **API Security**: Secure API key management
-
-## 📱 Responsive Design
-
-The application is fully responsive and optimized for:
-
-- **Mobile**: 320px and up
-- **Tablet**: 768px and up
-- **Desktop**: 1024px and up
-- **Large Desktop**: 1280px and up
-
-## 🚀 Performance Optimizations
-
-- **Image Optimization**: Next.js Image component with lazy loading
-- **Code Splitting**: Automatic code splitting by route
+- **Image Optimization**: Next.js Image component with WebP/AVIF support
+- **Code Splitting**: Automatic code splitting for optimal bundle sizes
 - **Caching**: Intelligent API response caching
-- **Bundle Optimization**: Tree shaking and minification
-- **CDN**: Global CDN distribution via Vercel
+- **Service Worker**: Offline support and caching
+- **Performance Monitoring**: Real-time metrics in development mode
+
+## 🔧 Development
+
+### Branch Strategy
+- `main`: Production branch
+- `develop`: Development branch
+- `feature/*`: Feature branches
+
+### Commit Convention
+This project follows [Conventional Commits](https://www.conventionalcommits.org/):
+- `feat:` New features
+- `fix:` Bug fixes
+- `docs:` Documentation changes
+- `style:` Code style changes
+- `refactor:` Code refactoring
+- `test:` Test additions/changes
+- `chore:` Build process or auxiliary tool changes
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+3. Commit your changes (`git commit -m 'feat: add amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- [The Movie Database (TMDB)](https://www.themoviedb.org/) for providing the movie data API
-- [Next.js](https://nextjs.org/) for the amazing React framework
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
-- [Vercel](https://vercel.com/) for the deployment platform
-
 ## 📞 Support
 
-If you have any questions or need help, please:
-
-1. Check the [Issues](https://github.com/yourusername/movie-recommendation-app/issues) page
-2. Create a new issue if your problem isn't already reported
-3. Contact the maintainers
+For support, email info@savannahinformatics.com or create an issue in this repository.
 
 ---
 
-**Made with ❤️ by the MovieHub Team**# Movie-App-savanna-informatics
-# Movie-App-savanna-informatics
+**Built with ❤️ for Savannah Informatics Assessment**

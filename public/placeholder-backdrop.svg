@@ -1,0 +1,6 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1280" height="720" fill="#F3F4F6"/>
+<rect x="500" y="250" width="280" height="220" fill="#9CA3AF"/>
+<path d="M580 350L640 320L700 350V420L640 390L580 420V350Z" fill="#6B7280"/>
+<text x="640" y="500" text-anchor="middle" fill="#6B7280" font-family="Arial, sans-serif" font-size="18">No Backdrop</text>
+</svg>
