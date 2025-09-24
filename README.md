@@ -58,7 +58,7 @@ A modern, production-ready movie recommendation application built with Next.js, 
    Fill in your environment variables in `.env.local`:
    ```env
    # TMDB API Configuration
-   NEXT_PUBLIC_TMDB_API_KEY=your_tmdb_api_key_here
+   NEXT_PUBLIC_TMDB_API_KEY=7fc13865b78a20acbe611fc37666c57d
    NEXT_PUBLIC_TMDB_BASE_URL=https://api.themoviedb.org/3
    NEXT_PUBLIC_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
 
@@ -94,7 +94,7 @@ A modern, production-ready movie recommendation application built with Next.js, 
 3. **Environment Variables for Production**
    ```env
    # TMDB API Configuration
-   NEXT_PUBLIC_TMDB_API_KEY=your_production_tmdb_api_key
+   NEXT_PUBLIC_TMDB_API_KEY=7fc13865b78a20acbe611fc37666c57d
    NEXT_PUBLIC_TMDB_BASE_URL=https://api.themoviedb.org/3
    NEXT_PUBLIC_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
 
