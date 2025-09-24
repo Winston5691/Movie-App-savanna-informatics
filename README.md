@@ -110,7 +110,6 @@ A modern, production-ready movie recommendation application built with Next.js, 
 7. **Get your live URL** - Vercel will provide you with a URL like `https://movie-app-savanna-informatics.vercel.app`
 
 ### Alternative Deployment Options
-
 #### Netlify
 1. Go to [netlify.com](https://netlify.com)
 2. Connect your GitHub account
