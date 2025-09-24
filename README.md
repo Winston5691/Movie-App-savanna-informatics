@@ -85,13 +85,11 @@ A modern, production-ready movie recommendation application built with Next.js, 
 
 ### Vercel (Recommended)
 
-1. **Fork this repository**
-2. **Connect to Vercel**
-   - Go to [vercel.com](https://vercel.com)
-   - Import your forked repository
-   - Set up environment variables in Vercel dashboard
-
-3. **Environment Variables for Production**
+1. **Go to [vercel.com](https://vercel.com)**
+2. **Sign up/Login** with your GitHub account
+3. **Click "New Project"**
+4. **Import your repository**: `Winston5691/Movie-App-savanna-informatics`
+5. **Set Environment Variables** in Vercel dashboard:
    ```env
    # TMDB API Configuration
    NEXT_PUBLIC_TMDB_API_KEY=7fc13865b78a20acbe611fc37666c57d
@@ -99,19 +97,33 @@ A modern, production-ready movie recommendation application built with Next.js, 
    NEXT_PUBLIC_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
 
    # NextAuth Configuration
-   NEXTAUTH_URL=https://your-domain.vercel.app
-   NEXTAUTH_SECRET=your_production_nextauth_secret
+   NEXTAUTH_URL=https://your-app-name.vercel.app
+   NEXTAUTH_SECRET=your-production-nextauth-secret
 
    # OAuth Providers (Optional)
-   GOOGLE_CLIENT_ID=your_production_google_client_id
-   GOOGLE_CLIENT_SECRET=your_production_google_client_secret
-   GITHUB_ID=your_production_github_client_id
-   GITHUB_SECRET=your_production_github_client_secret
+   GOOGLE_CLIENT_ID=your-google-client-id
+   GOOGLE_CLIENT_SECRET=your-google-client-secret
+   GITHUB_ID=your-github-client-id
+   GITHUB_SECRET=your-github-client-secret
    ```
+6. **Click Deploy** - Vercel will automatically build and deploy your app!
+7. **Get your live URL** - Vercel will provide you with a URL like `https://movie-app-savanna-informatics.vercel.app`
 
-4. **Deploy**
-   - Push to main branch
-   - Vercel will automatically deploy
+### Alternative Deployment Options
+
+#### Netlify
+1. Go to [netlify.com](https://netlify.com)
+2. Connect your GitHub account
+3. Import your repository
+4. Set build command: `npm run build`
+5. Set publish directory: `.next`
+6. Add environment variables and deploy!
+
+#### Railway
+1. Go to [railway.app](https://railway.app)
+2. Connect GitHub
+3. Deploy from repository
+4. Add environment variables and deploy!
 
 ### Manual Deployment
 
