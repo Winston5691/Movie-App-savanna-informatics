@@ -2,6 +2,12 @@
 
 A modern, production-ready movie recommendation application built with Next.js, TypeScript, and Tailwind CSS. Discover your next favorite movie with personalized recommendations, detailed movie information, and an intuitive user interface.
 
+## 🚀 Live Demo
+
+**🌐 [View Live App](https://project-lwjin.vercel.app/)**
+
+The application is deployed and ready for testing!
+
 ## 🚀 Features
 
 ### Core Features
@@ -62,7 +68,7 @@ A modern, production-ready movie recommendation application built with Next.js, 
    NEXT_PUBLIC_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
 
    # NextAuth Configuration
-   NEXTAUTH_URL=http://localhost:3000
+   NEXTAUTH_URL=https://project-lwjin.vercel.app
    NEXTAUTH_SECRET=your_nextauth_secret_here
 
    # OAuth Providers (Optional)
