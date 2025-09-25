@@ -7,6 +7,7 @@ export async function GET(request: NextRequest) {
       NEXTAUTH_URL: process.env.NEXTAUTH_URL,
       NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET ? 'Set' : 'Not set',
       NODE_ENV: process.env.NODE_ENV,
-    }
+    },
+    timestamp: new Date().toISOString()
   })
 }
