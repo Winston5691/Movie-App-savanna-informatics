@@ -142,3 +142,4 @@ The application includes several performance optimizations:
 - **Code Splitting**: Automatic code splitting for optimal bundle sizes
 - **Caching**: Intelligent API response caching
 - **Service Worker**: Offline support and caching
+- **Real-time Data**: Live movie data from TMDB API
