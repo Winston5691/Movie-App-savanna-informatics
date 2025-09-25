@@ -88,31 +88,36 @@ The application is deployed and ready for testing!
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+### Vercel Deployment
+This application is deployed on Vercel and can be accessed at:
 
-1. **Go to [vercel.com](https://vercel.com)**
-2. **Sign up/Login** with your GitHub account
-3. **Click "New Project"**
-4. **Import your repository**: `Winston5691/Movie-App-savanna-informatics`
-5. **Set Environment Variables** in Vercel dashboard:
-   ```env
-   # TMDB API Configuration
-   NEXT_PUBLIC_TMDB_API_KEY=7fc13865b78a20acbe611fc37666c57d
-   NEXT_PUBLIC_TMDB_BASE_URL=https://api.themoviedb.org/3
-   NEXT_PUBLIC_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
+**Live URL: [https://project-lwjin.vercel.app/](https://project-lwjin.vercel.app/)**
 
-   # NextAuth Configuration
-   NEXTAUTH_URL=https://your-app-name.vercel.app
-   NEXTAUTH_SECRET=your-production-nextauth-secret
+### Environment Variables Required
+The following environment variables must be configured in your Vercel dashboard:
 
-   # OAuth Providers (Optional)
-   GOOGLE_CLIENT_ID=your-google-client-id
-   GOOGLE_CLIENT_SECRET=your-google-client-secret
-   GITHUB_ID=your-github-client-id
-   GITHUB_SECRET=your-github-client-secret
-   ```
-6. **Click Deploy** - Vercel will automatically build and deploy your app!
-7. **Get your live URL** - Vercel will provide you with a URL like `https://movie-app-savanna-informatics.vercel.app`
+```env
+# TMDB API Configuration
+NEXT_PUBLIC_TMDB_API_KEY=7fc13865b78a20acbe611fc37666c57d
+NEXT_PUBLIC_TMDB_BASE_URL=https://api.themoviedb.org/3
+NEXT_PUBLIC_TMDB_IMAGE_BASE_URL=https://image.tmdb.org/t/p
+
+# NextAuth Configuration
+NEXTAUTH_URL=https://project-lwjin.vercel.app
+NEXTAUTH_SECRET=your-production-nextauth-secret
+
+# OAuth Providers (Optional)
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+GITHUB_ID=your-github-client-id
+GITHUB_SECRET=your-github-client-secret
+```
+
+### Deployment Process
+1. Connect your GitHub repository to Vercel
+2. Configure the environment variables above
+3. Deploy automatically on every push to main branch
+4. Access your live application at the provided URL
 
 ### Manual Deployment
 
