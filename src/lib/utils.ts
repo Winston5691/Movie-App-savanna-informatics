@@ -61,7 +61,7 @@ export function getProfileUrl(path: string | null, size: 'w45' | 'w185' | 'h632'
     return `${baseUrl}/${size}${normalizedPath}`
 }
 
-export function debounce<T extends (...args: unknown[]) => unknown>(
+export function debounce<T extends (...args: any[]) => any>(
     func: T,
     wait: number
 ): (...args: Parameters<T>) => void {

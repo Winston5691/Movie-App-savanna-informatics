@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { useSearchMovies } from '@/hooks/useMovies'
 import { useMovieStore } from '@/store/movieStore'
@@ -10,7 +10,7 @@ import SearchFilters from '@/components/search/SearchFilters'
 import MovieGrid from '@/components/movies/MovieGrid'
 import Pagination from '@/components/ui/Pagination'
 
-export default function SearchPage() {
+function SearchPageContent() {
   const searchParams = useSearchParams()
   const [filters, setFilters] = useState<Partial<SearchParams>>({
     query: searchParams.get('q') || '',
@@ -86,5 +86,13 @@ export default function SearchPage() {
         </div>
       )}
     </div>
+  )
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SearchPageContent />
+    </Suspense>
   )
 }
