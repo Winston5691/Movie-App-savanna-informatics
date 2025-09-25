@@ -175,17 +175,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 📞 Support
 
 For support, email info@savannahinformatics.com or create an issue in this repository.
-
----
-
-**Built with ❤️ for Savannah Informatics Assessment**
-
-## 🚀 Live Demo
-Your app is now deployed and ready for assessment!
-
-### 🎬 Features Available:
-- Browse popular, top-rated, and upcoming movies
-- Search movies with advanced filters
-- Watch movie trailers directly in the app
-- View detailed movie information with cast and crew
-- Responsive design that works on all devices
