@@ -1,9 +1,28 @@
 import { NextAuthOptions } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 import GitHubProvider from 'next-auth/providers/github'
+import CredentialsProvider from 'next-auth/providers/credentials'
 
 export const authOptions: any = {
     providers: [
+        CredentialsProvider({
+            name: 'credentials',
+            credentials: {
+                email: { label: 'Email', type: 'email' },
+                password: { label: 'Password', type: 'password' }
+            },
+            async authorize(credentials) {
+                // Simple demo authentication - in production, verify against database
+                if (credentials?.email === 'demo@moviehub.com' && credentials?.password === 'demo123') {
+                    return {
+                        id: '1',
+                        email: 'demo@moviehub.com',
+                        name: 'Demo User',
+                    }
+                }
+                return null
+            }
+        }),
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID || '',
             clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
