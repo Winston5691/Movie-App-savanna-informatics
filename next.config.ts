@@ -15,14 +15,6 @@ const nextConfig: NextConfig = {
   },
   experimental: {
     optimizePackageImports: ['@heroicons/react', 'lucide-react'],
-    turbo: {
-      rules: {
-        '*.svg': {
-          loaders: ['@svgr/webpack'],
-          as: '*.js',
-        },
-      },
-    },
   },
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
