@@ -22,7 +22,6 @@ A modern, production-ready movie recommendation application built with Next.js, 
 - **Testing**: Comprehensive unit tests with Jest and React Testing Library
 - **CI/CD**: Automated testing, linting, and deployment pipeline
 - **Accessibility**: WCAG compliant with proper ARIA labels and keyboard navigation
-- **Performance Monitoring**: Real-time performance metrics in development
 - **Error Handling**: Comprehensive error boundaries and fallback UI
 
 ## 🛠️ Tech Stack
@@ -109,21 +108,6 @@ A modern, production-ready movie recommendation application built with Next.js, 
 6. **Click Deploy** - Vercel will automatically build and deploy your app!
 7. **Get your live URL** - Vercel will provide you with a URL like `https://movie-app-savanna-informatics.vercel.app`
 
-### Alternative Deployment Options
-#### Netlify
-1. Go to [netlify.com](https://netlify.com)
-2. Connect your GitHub account
-3. Import your repository
-4. Set build command: `npm run build`
-5. Set publish directory: `.next`
-6. Add environment variables and deploy!
-
-#### Railway
-1. Go to [railway.app](https://railway.app)
-2. Connect GitHub
-3. Deploy from repository
-4. Add environment variables and deploy!
-
 ### Manual Deployment
 
 1. **Build the application**
@@ -158,7 +142,6 @@ The application includes several performance optimizations:
 - **Code Splitting**: Automatic code splitting for optimal bundle sizes
 - **Caching**: Intelligent API response caching
 - **Service Worker**: Offline support and caching
-- **Performance Monitoring**: Real-time metrics in development mode
 
 ## 🔧 Development
 
