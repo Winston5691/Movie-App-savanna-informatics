@@ -15,12 +15,12 @@ export const authOptions: any = {
             },
             async authorize(credentials) {
                 console.log('Authorizing credentials:', credentials)
-                
+
                 if (!credentials?.email || !credentials?.password) {
                     console.log('Missing credentials')
                     return null
                 }
-                
+
                 // Simple demo authentication - in production, verify against database
                 if (credentials.email === 'demo@moviehub.com' && credentials.password === 'demo123') {
                     console.log('Credentials valid, returning user')
@@ -30,20 +30,23 @@ export const authOptions: any = {
                         name: 'Demo User',
                     }
                 }
-                
+
                 console.log('Credentials invalid:', { email: credentials.email, password: credentials.password })
                 return null
             }
         }),
-        // Temporarily disable OAuth providers to debug credentials
-        // GoogleProvider({
-        //     clientId: process.env.GOOGLE_CLIENT_ID || '',
-        //     clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
-        // }),
-        // GitHubProvider({
-        //     clientId: process.env.GITHUB_ID || '',
-        //     clientSecret: process.env.GITHUB_SECRET || '',
-        // }),
+        ...(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET ? [
+            GoogleProvider({
+                clientId: process.env.GOOGLE_CLIENT_ID,
+                clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+            })
+        ] : []),
+        ...(process.env.GITHUB_ID && process.env.GITHUB_SECRET ? [
+            GitHubProvider({
+                clientId: process.env.GITHUB_ID,
+                clientSecret: process.env.GITHUB_SECRET,
+            })
+        ] : []),
     ],
     callbacks: {
         async jwt({ token, account, user }: any) {

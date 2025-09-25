@@ -29,10 +29,7 @@ export default function SignInPage() {
     
     console.log('Attempting signin with:', { email, password })
     
-    // Check credentials first
-    if (email === 'demo@moviehub.com' && password === 'demo123') {
-      console.log('Credentials match, attempting signin...')
-      
+    try {
       const result = await signIn('credentials', {
         email,
         password,
@@ -44,13 +41,13 @@ export default function SignInPage() {
       if (result?.ok) {
         console.log('Signin successful, redirecting...')
         router.push('/')
-        return
       } else {
         console.log('Signin failed:', result?.error)
-        alert(`Signin failed: ${result?.error || 'Authentication error'}`)
+        alert(`Signin failed: ${result?.error || 'Invalid credentials'}. Use demo@moviehub.com / demo123`)
       }
-    } else {
-      alert('Invalid credentials. Use demo@moviehub.com / demo123')
+    } catch (error) {
+      console.error('Signin error:', error)
+      alert('Signin error. Please try again.')
     }
     
     setIsLoading(false)
