@@ -38,14 +38,24 @@ export const authOptions: any = {
         }),
     ],
     callbacks: {
-        async jwt({ token, account }: any) {
+        async jwt({ token, account, user }: any) {
             if (account) {
                 token.accessToken = account.access_token
+            }
+            if (user) {
+                token.id = user.id
+                token.email = user.email
+                token.name = user.name
             }
             return token
         },
         async session({ session, token }: any) {
-            session.accessToken = token.accessToken
+            if (token) {
+                session.user.id = token.id
+                session.user.email = token.email
+                session.user.name = token.name
+                session.accessToken = token.accessToken
+            }
             return session
         },
     },
@@ -55,5 +65,9 @@ export const authOptions: any = {
     },
     session: {
         strategy: 'jwt',
+        maxAge: 30 * 24 * 60 * 60, // 30 days
+    },
+    jwt: {
+        maxAge: 30 * 24 * 60 * 60, // 30 days
     },
 }
