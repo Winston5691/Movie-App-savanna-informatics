@@ -29,20 +29,28 @@ export default function SignInPage() {
     
     console.log('Attempting signin with:', { email, password })
     
-    const result = await signIn('credentials', {
-      email,
-      password,
-      redirect: false,
-    })
-    
-    console.log('Signin result:', result)
-    
-    if (result?.ok) {
-      console.log('Signin successful, redirecting...')
-      router.push('/')
+    // Check credentials first
+    if (email === 'demo@moviehub.com' && password === 'demo123') {
+      console.log('Credentials match, attempting signin...')
+      
+      const result = await signIn('credentials', {
+        email,
+        password,
+        redirect: false,
+      })
+      
+      console.log('Signin result:', result)
+      
+      if (result?.ok) {
+        console.log('Signin successful, redirecting...')
+        router.push('/')
+        return
+      } else {
+        console.log('Signin failed:', result?.error)
+        alert(`Signin failed: ${result?.error || 'Authentication error'}`)
+      }
     } else {
-      console.log('Signin failed:', result?.error)
-      alert(`Signin failed: ${result?.error || 'Invalid credentials'}. Use demo@moviehub.com / demo123`)
+      alert('Invalid credentials. Use demo@moviehub.com / demo123')
     }
     
     setIsLoading(false)
