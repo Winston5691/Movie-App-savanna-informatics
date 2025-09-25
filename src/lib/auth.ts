@@ -4,22 +4,27 @@ import GitHubProvider from 'next-auth/providers/github'
 import CredentialsProvider from 'next-auth/providers/credentials'
 
 export const authOptions: any = {
+    secret: process.env.NEXTAUTH_SECRET || 'fallback-secret-for-development',
     providers: [
         CredentialsProvider({
+            id: 'credentials',
             name: 'credentials',
             credentials: {
                 email: { label: 'Email', type: 'email' },
                 password: { label: 'Password', type: 'password' }
             },
             async authorize(credentials) {
+                console.log('Authorizing credentials:', credentials)
                 // Simple demo authentication - in production, verify against database
                 if (credentials?.email === 'demo@moviehub.com' && credentials?.password === 'demo123') {
+                    console.log('Credentials valid, returning user')
                     return {
                         id: '1',
                         email: 'demo@moviehub.com',
                         name: 'Demo User',
                     }
                 }
+                console.log('Credentials invalid')
                 return null
             }
         }),

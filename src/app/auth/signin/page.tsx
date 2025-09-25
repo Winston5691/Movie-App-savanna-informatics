@@ -27,16 +27,22 @@ export default function SignInPage() {
     e.preventDefault()
     setIsLoading(true)
     
+    console.log('Attempting signin with:', { email, password })
+    
     const result = await signIn('credentials', {
       email,
       password,
       redirect: false,
     })
     
+    console.log('Signin result:', result)
+    
     if (result?.ok) {
+      console.log('Signin successful, redirecting...')
       router.push('/')
     } else {
-      alert('Invalid credentials. Use demo@moviehub.com / demo123')
+      console.log('Signin failed:', result?.error)
+      alert(`Signin failed: ${result?.error || 'Invalid credentials'}. Use demo@moviehub.com / demo123`)
     }
     
     setIsLoading(false)
