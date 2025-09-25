@@ -2,7 +2,7 @@ import { NextAuthOptions } from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google'
 import GitHubProvider from 'next-auth/providers/github'
 
-export const authOptions: NextAuthOptions = {
+export const authOptions: any = {
     providers: [
         GoogleProvider({
             clientId: process.env.GOOGLE_CLIENT_ID || '',
@@ -14,13 +14,13 @@ export const authOptions: NextAuthOptions = {
         }),
     ],
     callbacks: {
-        async jwt({ token, account }) {
+        async jwt({ token, account }: any) {
             if (account) {
                 token.accessToken = account.access_token
             }
             return token
         },
-        async session({ session, token }) {
+        async session({ session, token }: any) {
             session.accessToken = token.accessToken
             return session
         },

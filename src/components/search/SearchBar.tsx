@@ -27,7 +27,7 @@ export default function SearchBar({
     } else {
       router.push(`/search?q=${encodeURIComponent(searchQuery)}`)
     }
-  }, 300)
+  } as any, 300)
 
   useEffect(() => {
     if (query) {

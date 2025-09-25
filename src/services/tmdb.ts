@@ -13,7 +13,7 @@ class TMDBService {
 
     private async request<T>(endpoint: string, params: Record<string, unknown> = {}): Promise<T> {
         const url = new URL(`${BASE_URL}${endpoint}`)
-        url.searchParams.set('api_key', API_KEY)
+        url.searchParams.set('api_key', API_KEY || '')
 
         Object.entries(params).forEach(([key, value]) => {
             if (value !== undefined && value !== null) {
@@ -38,7 +38,7 @@ class TMDBService {
             const data = await response.json()
             this.cache.set(cacheKey, { data, timestamp: Date.now() })
 
-            return data
+            return data as T
         } catch (error) {
             console.error('TMDB API request failed:', error)
             throw error
